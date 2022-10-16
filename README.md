@@ -1,5 +1,8 @@
 # Alpha♀
-An alphabet of influential women
+Check out what influential women shares the first letter of your name!
+
+## Note
+All the backend works, but the frontend is a incomplete right now.
 
 ## How to Build
 
