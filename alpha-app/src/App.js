@@ -20,11 +20,13 @@ class App extends Component {
     this.searchWoman = this.searchWoman.bind(this);
     this.allWomen = this.allWomen.bind(this);
     this.handleSubmit = this.handleSubmit(this);
+    this.bSearchWoman = this.bSearchWoman(this);
   }
 
   async componentDidMount(){
     try {
       this.allWomen();
+      this.bSearchWoman();
 
     } catch(e) {
       console.log(e);
@@ -77,6 +79,35 @@ class App extends Component {
           "Content-Type": "application/json",
         },
         uri: "http://localhost:4000/woman/"+localStorage.getItem(1)
+      });
+      if (response) {
+        let data = JSON.parse(response.body);
+        this.setState({
+          search: {
+            wID: data[0].woman_id,
+            fLetter: data[0].fLetter,
+            wName: data[0].wName,
+            wParrafo: data[0].wParrafo,
+            wBday: data[0].wBday,
+          }
+        });
+      }
+    } catch(e) {
+      console.log("search");
+      console.log(e);
+    }
+  }
+
+  // back up
+  async bSearchWoman(event) {
+    try {
+      let requestPromise = util.promisify(request);
+      let response = await requestPromise({
+        method: 'GET',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        uri: "http://localhost:4000/woman/A"
       });
       if (response) {
         let data = JSON.parse(response.body);
