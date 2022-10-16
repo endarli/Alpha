@@ -11,4 +11,4 @@ An alphabet of influential women
 > npm install
 
 ### Database
-> ./startServer.sh
+> sh startServer.sh
