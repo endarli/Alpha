@@ -1,6 +1,8 @@
 # Alpha♀
 Check out which influential woman has the same first letter of their name as you!
 
+![App Interface](/Alpha.png?raw=true "App Interface")
+
 ## Note
 All the backend works, but the frontend is a incomplete right now.
 
