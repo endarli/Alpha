@@ -1,7 +1,6 @@
 import './App.css';
 import { Component } from "react";
 import { Table, TableContainer, TableHead, TableBody, TableRow, TableCell, Paper} from '@mui/material';
-import { AppBar, Toolbar, TextField, Button, Box } from "@material-ui/core";
 const request = require("request");
 const util = require("util");
 // https://docs.npmjs.com/cli/v8/commands/npm-link for folders outside
@@ -28,19 +27,20 @@ class App extends Component {
       this.allWomen();
 
     } catch(e) {
-      console.log("compM");
       console.log(e);
     }
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.setState({
-      sumbitted: true,
-      fLet: document.getElementById('fL').value
-    })
-
-    this.searchWoman();
+  handleSubmit(event) {
+    try {this.setState({
+        sumbitted: true,
+        fLet: document.getElementById('fL').value
+      })
+      window.localStorage.setItem(1, this.state.fLet);
+      this.searchWoman();
+    } catch(e) {
+      return e;
+    }
   }
 
   // All Woman Handler
@@ -76,7 +76,7 @@ class App extends Component {
         headers: {
           "Content-Type": "application/json",
         },
-        uri: "http://localhost:4000/woman/"+JSON.stringify(fLet)
+        uri: "http://localhost:4000/woman/"+localStorage.getItem(1)
       });
       if (response) {
         let data = JSON.parse(response.body);
@@ -104,20 +104,19 @@ class App extends Component {
           <p>Alpha</p>
         </h>
 
-        <form onSubmit={handleSubmit}>
-          First Letter of Your Name:
-          <TextField
-            style={{ width: "200px", margin: "5px" }}
+        <form>
+          <p>First Letter of Your Name:</p>
+          <input
+            style={{ height: "30px", width: "200px", margin: "5px" , textAlign: "center", border: "0px"}}
             type="text"
-            label="please format in Uppercase"
-            variant="outlined"
+            placeholder="Please Format in Uppercase"
             id="fL"
           />
           <br />
           <br />
-          <Button type="submit" variant="contained" color="primary">
+          <button type="submit" color="primary" onSubmit={()=>this.handleSubmit()}>
             Submit
-          </Button>
+          </button>
         </form>
 
         <TableContainer component={Paper}>

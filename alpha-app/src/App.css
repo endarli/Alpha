@@ -24,7 +24,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  position: fixed;
 }
 
 .App-link {
@@ -42,6 +41,10 @@
 
 .p {
   text-align: left;
+}
+
+.form {
+  margin-top: 20px;
 }
 
 .css-11xur9t-MuiPaper-root-MuiTableContainer-root {
