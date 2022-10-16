@@ -12,10 +12,10 @@ sleep 5
 
 # Start server
 # docker run -e 'HOMEBREW_NO_ENV_FILTERING=4' -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password$1234' -p 1433:1433 --name=women-mssql-server -d liaisonintl/mssql-server-linux
-docker run -e "ACCEPT_EULA=Y" -e 'ID=SA' -e 'SA_PASSWORD=<Password$1234>' -p 1433:1433 --name women-mssql-server --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest
+docker run -e "ACCEPT_EULA=Y" -e 'ID=SA' -e 'SA_PASSWORD=<Password$1234>' -p 1433:1433 --name women-mssql-server -d mcr.microsoft.com/mssql/server:2022-latest
 
-# Sleep 5 seconds
-sleep 10
+# Sleep 15 seconds
+sleep 15
 
 # Create database
 sqlcmd -S 127.0.0.1 -U SA -P '<Password$1234>' -i cDB.sql

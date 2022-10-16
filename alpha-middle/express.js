@@ -13,33 +13,52 @@ const sqlService = require("./services/sql-service");
 const vals = require("./validations/women");
 
 // GET Woman by First Letter of Her Name
-router.get("/women/:letter", async (req, res) => {
+router.get("/woman/:letter", async (req, res) => {
+    try {
+    //   Validation
+    //   const { error } = vals.fLetterSchema.validate(req.params.letter);
 
-  try {
-      // Validation
-      const { error } = vals.fLetterSchema.validate(req.params);
-
-      if (error) {
-          return res.status(400).send(error.details[0].message).end();
-      }
+      //   if (error) {
+      //     return res.status(400).send(error.details[0].message).end();
+      //   }
 
       // Access Letter From Params
       let letter = req.params.letter;
+      console.log(letter);
 
       // Get Woman
-      let woman = await sqlService.selectWomanByLetter(letter)
+      let woman = await sqlService.selectWomanByLetter(letter);
 
       // Handle Result
       if (woman) {
           res.status(200).send(woman);
       } else {
-          res.status(500).send("Error retrieving woman.");
+          res.status(500).send("Error retrieving woman1.");
       }
-
-  } catch(e) {
-      res.status(500).send();
-  }
+    } catch(e) {
+        res.status(500).send("Error retrieving woman2.");
+    }
 });
+
+// GET All Women
+router.get("/women/", async (req, res) => {
+
+    try {
+        // Get Woman
+        let woman = await sqlService.selectAllWomen();
+  
+        // Handle Result
+        if (woman) {
+            res.status(200).send(woman);
+        } else {
+            res.status(500).send("Error retrieving woman1.");
+        }
+  
+    } catch(e) {
+        console.log(e);
+        res.status(500).send("Error retrieving women2.");
+    }
+  });
 
 // Create Woman
 router.post("/woman", async (req, res) => {
@@ -68,7 +87,7 @@ router.post("/woman", async (req, res) => {
       }
   } catch(e) {
       console.log(e);
-      res.status(500).send();
+      res.status(500).send("Error creating woman.");
   }
 });
 

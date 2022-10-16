@@ -7,7 +7,7 @@ INSERT INTO women (fLetter, wName, wParrafo, wBday) VALUES ("A", "Amelia Earhart
 INSERT INTO women (fLetter, wName, wParrafo, wBday) VALUES ("A", "Aung San Suu Kyi", 
 "Aung San Suu Kyi (born 1945) is a Burmese human rights activist who has become an international symbol of peaceful protest in the face of political oppression. In 1988, Suu Kyi organized rallies all over Myanmar (Burma), speaking out against the military dictator General Ne Win and calling for reform. In September 1988 there was a military coup, and the army moved to suppress the demonstrations, killing thousands of protesters. The following year Suu Kyi was placed under house arrest at her home in Yangon (Rangoon). The government offered to release her if she would leave the country, but she refused until reforms had been introduced and political prisoners released. Suu Kyi remained under house arrest for long periods of time until 2010, during which she won the Nobel Peace Prize (1991). After her release in 2010, Suu Kyi was elected a member of parliament and is now actively involved in politics in Myanmar.", 
 "19 June 1945");
-INSERT INTO women (fLetter, wName, wParrafo, wBday) VALUES ("B", "Barbra Streisand", 
+INSERT INTO women (fLetter, wName, wParrafo, wBday) VALUES ("B", "Barbara Streisand", 
 "Barbara Joan 'Barbra' Streisand (/'straɪsænd/; born April 24, 1942) is an American singer and actress. With a career spanning over six decades, she has achieved success in multiple fields of entertainment, and is among the few performers awarded an Emmy, Grammy, Oscar, and Tony (EGOT). She is one of the last surviving stars from the Golden Age of Hollywood.", 
 "April 24, 1942");
 INSERT INTO women (fLetter, wName, wParrafo, wBday) VALUES ("E", "Elizabeth Blackwell", 

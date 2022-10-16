@@ -1,7 +1,7 @@
 module.exports = {
-    user: 'sa',
-    password: 'Password$1234',
-    database: "women",
+    user: 'SA',
+    password: '<Password$1234>',
+    database: "womenDB",
     server: 'localhost',
     pool: {
         max: 10,
