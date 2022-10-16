@@ -1,5 +1,5 @@
 # Alpha♀
-Check out what influential women shares the first letter of your name!
+Check out which influential woman has the same first letter of their name as you!
 
 ## Note
 All the backend works, but the frontend is a incomplete right now.
